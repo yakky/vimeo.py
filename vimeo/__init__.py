@@ -29,7 +29,7 @@ class VimeoClient():
     Root of the vimeo API
     All API endpoints are accessible via getattr() on VimeoClient
     """
-    def __init__(self, access_token=None, client_id=None, client_secret=None, api_root=None):
+    def __init__(self, access_token=None, client_id=None, client_secret=None, api_root=None, timeout=100000.0):
         """
         Create an instance of VimeoClient
         Simply sets up some global configuration and allocates all attributes (API endpoints)
@@ -57,6 +57,9 @@ class VimeoClient():
 
             # Default "Accept" HTTP header sent with every request if none is specified
             'accept': 'application/vnd.vimeo.*+json; version=3.2'
+
+            # Timeout (used when calling Tornado's HTTPClient)
+            'timeout': timeout,
         }
 
         """

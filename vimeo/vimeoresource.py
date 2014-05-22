@@ -322,8 +322,11 @@ class VimeoResource(object):
         if "?" in url:
             url = url.split('?')[0]
         url = "%s?" % url
-        querys = {a: querys[a] for a in querys if querys[a]}
-        url += urlencode(querys)
+        queryn = {}
+        for a in querys:
+            if querys[a]:
+                queryn[a] = querys[a]
+        url += urlencode(queryn)
         return url
 
     def _end_request_handler(self, response, error):
