@@ -56,7 +56,7 @@ class VimeoClient():
             'user-agent': 'python-vimeo 0.1; (http://developer.vimeo.com/api/docs)',
 
             # Default "Accept" HTTP header sent with every request if none is specified
-            'accept': 'application/vnd.vimeo.*+json; version=3.2'
+            'accept': 'application/vnd.vimeo.*+json; version=3.2',
 
             # Timeout (used when calling Tornado's HTTPClient)
             'timeout': timeout,
