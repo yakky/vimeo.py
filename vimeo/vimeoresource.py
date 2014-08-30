@@ -548,7 +548,7 @@ class SingularResource(VimeoResource):
                     'endpoint': endpoint
                 }
 
-                if name in {"patch", "post"}:
+                if name in ("patch", "post"):
                     kwargs['extra_headers'] = {'Content-Type': 'application/json'}
                     kwargs['body'] = json.dumps(data or params)
                 else:
